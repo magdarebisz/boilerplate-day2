@@ -1,0 +1,158 @@
+@import 'normalize';
+
+$main-color: #e6e6e6;
+
+@mixin center-horizontally($top) {
+  left: 50%;
+  position: absolute;
+  top: $top;
+  transform: translate3D(-50%, -$top, 0);
+}
+
+
+@mixin center-vertically($value) {
+  left: $value;
+  position: absolute;
+  top: 50%;
+  transform: translate3D(-$value, -50%, 0);
+}
+
+.playPauseBtns {
+  height: 15px;
+  transition: opacity 0.5s ease-in-out;
+  width: 15px;
+}
+
+* {
+  box-sizing: border-box;
+  color: $main-color;
+  font-family: Roboto-Regular;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.04rem;
+}
+
+body {
+  background-size: cover;
+  background: url('/src/assets/images/5938870365_a0c951015b_o.jpg') no-repeat center center fixed;
+  height: 100vh;
+  transition: background-image 1s ease-in-out;
+}
+
+.player {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.progress {
+  position: absolute;
+  transform: rotate(-90deg);
+}
+
+.progress__meter,
+.progress__value {
+  fill: none;
+}
+
+.progress__meter {
+  stroke: $main-color;
+}
+
+.progress__value {
+  stroke: #f77a52;
+  transition: stroke-dashoffset 0.5s linear;
+}
+
+.controls {
+  height: 400px;
+  position: relative;
+  width: 400px;
+}
+
+i {
+  color: $main-color;
+}
+
+.controls__play {
+  @extend .playPauseBtns;
+  opacity: 0;
+
+  &:before {
+    @include center-horizontally(90%);
+  }
+}
+
+.controls__pause {
+  @extend .playPauseBtns;
+
+  &:before {
+    @include center-horizontally(90%);
+  }
+}
+
+.controls__forward {
+  height: 15px;
+  width: 15px;
+
+  &:before {
+    @include center-vertically(90%);
+  }
+}
+
+.controls__backward {
+  height: 15px;
+  width: 15px;
+
+  &:before {
+    @include center-vertically(10%);
+  }
+}
+
+.audio-info {
+  align-items: center;
+  border-radius: 100px;
+  border: 2px solid $main-color;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+}
+
+.audio-info__time {
+  display: block;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.audio-info__title {
+  display: block;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.audio-info__author {
+  display: block;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
