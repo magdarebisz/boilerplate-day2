@@ -36,20 +36,9 @@ const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
 // 28 - assign path to source of the audio
 
-// 27 - change current index function
-
 // 2 - declare and invoke play function
 
 // 3 - declare pause function
-
-// 25 - load first function
-const loadFirstSong = () => {
-  if (true) { // check if there is 'mp3' in src attr
-    // set up new index in to track current song index
-    // assign path to audio.src
-    // play !
-  }
-};
 
 // 9 - declare show pause button and hide play function
 const showPauseBtn = () => {
@@ -59,44 +48,6 @@ const showPauseBtn = () => {
 
 // 10 - declare show play button and hide pause function
 
-// 8 - declare play audio handler for both play and pause
-const playAudio = () => {
-  if (true) { // put here expression
-
-  } else {
-
-  }
-};
-
-// 38 - every time song changes set up new background
-
-// 29 - update both title and author, get title and author from current playing
-// song and assign them to title info and author info spans
-
-// 40 - play prev song
-
-// 37 - play next song on click function
-const nextSong = () => {
-  // use setup new index function to increase it by one
-  // check using if statement if it is last song if so set up index to 0
-  // invoke assign path function
-  // play !
-  // invoke update title and author
-  // update background
-};
-
-// 42 - change song every time the last one ended
-
-// 23 - extract title and author from path to the audio file
-const getMetaSong = (path) => {
-  const extractedInfo = path.replace(/.mp3|http:\/\/localhost:8080\/src\/assets\/audio\//gi, '');
-  const index = extractedInfo.indexOf('-');
-  const result = {
-    author: extractedInfo.substring(0, index),
-    title: extractedInfo.substring(index + 1),
-  };
-  return result;
-};
 // 13 - show time function
 const showTime = () => {
   // extract duration, current time properties from audio object
@@ -119,7 +70,57 @@ const updateProgress = () => {
 
 // 22 - extract links/parse text to get array array of html tags
 
+// 23 - extract title and author from path to the audio file
+const getMetaSong = (path) => {
+  const extractedInfo = path.replace(/.mp3|http:\/\/localhost:8080\/src\/assets\/audio\//gi, '');
+  const index = extractedInfo.indexOf('-');
+  const result = {
+    author: extractedInfo.substring(0, index),
+    title: extractedInfo.substring(index + 1),
+  };
+  return result;
+};
+
+// 27 - change current index function
+
+// 25 - load first function
+const loadFirstSong = () => {
+  if (true) { // check if there is 'mp3' in src attr
+    // set up new index in to track current song index
+    // assign path to audio.src
+    // play !
+  }
+};
+
+// 29 - update both title and author, get title and author from current playing
+// song and assign them to title info and author info spans
+
+// 38 - every time song changes set up new background
+
+// 8 - declare play audio handler for both play and pause
+const playAudio = () => {
+  if (true) { // put here expression
+
+  } else {
+
+  }
+};
+
 // 12 - declare timeupdate handler which should show time and update progress
+
+// 37 - play next song on click function
+const nextSong = () => {
+  // use setup new index function to increase it by one
+  // check using if statement if it is last song if so set up index to 0
+  // invoke assign path function
+  // play !
+  // invoke update title and author
+  // update background
+};
+
+// 40 - play prev song
+
+// 42 - change song every time the last one ended
 
 // 6 -  start listening click events on play button
 
